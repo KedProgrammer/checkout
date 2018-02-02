@@ -3,12 +3,14 @@ module Descuentos
 		include Dates
 		@items = []
 		@main = Main::Main.new(@items)
-
 		def self.scan(item)
-			
-			@items << item
-			@main.order = @items
-		
+			if !Dates::PRICES.keys.include?(item)
+				return {:message => "Invalid code, can't add to order"}
+			else
+				@items << item
+				@main.order = @items
+				return {:message => "Valid code, add to order"}
+			end
 			
 		end
 
