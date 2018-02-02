@@ -30,7 +30,7 @@ module Main
 		end
 
 		def validate
-				Dates::PRICES.each {|key,value| @@order.count(key) >= 3 ? Dates::PRICES[key] = Dates::DISCOUNT[key] : Dates::PRICES[key] = value }
+				Dates::PRICES.each {|key,value| @@order.count(key) >= Dates::CFO_MIN_DISCOUNT ? Dates::PRICES[key] = Dates::DISCOUNT[key] : Dates::PRICES[key] = value }
 				@@total =  @@order.reduce(0) {|memo, obj| memo + Dates::PRICES[obj]}
 		end
 	end
