@@ -24,7 +24,7 @@ module Descuentos
 			end
 
 			#return total order 
-			@main.total_order
+			return {:message => "Your total price is #{@main.total_order}"}
 		end
 		def self.remove
 			@main.remove
