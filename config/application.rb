@@ -19,7 +19,11 @@ Bundler.require(*Rails.groups)
 module Checkout
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+     config.autoload_paths += %W(#{config.root}/lib/main_module)
+      config.autoload_paths += %W(#{config.root}/lib/validators)
     config.load_defaults 5.1
+      
+   
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
