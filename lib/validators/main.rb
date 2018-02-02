@@ -1,6 +1,7 @@
 module Main
 
 	class Main
+		# main class and classes variables
 		include Dates
 		attr_accessor :order
 		def initialize(order)
@@ -14,7 +15,7 @@ module Main
 
 
 	end
-
+	#cfo discount
 
 	class CsoValidator  < Main 
 		def initialize
@@ -37,7 +38,7 @@ module Main
 	end
 
 
-
+ # Marketing departament 2x1 promotion
 	class MarketingValidator < Main
 		def initialize
 				
