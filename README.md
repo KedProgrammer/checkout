@@ -1,24 +1,7 @@
-# README
+# Checkout API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##  Main modules are in the /lib library.
 
-Things you may want to cover:
+##  You can easily add new discounts or validations to the order and change the rules of the existing ones.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To Add a new discount just  go to the  Dates module and instance a new discount in the Validations array
