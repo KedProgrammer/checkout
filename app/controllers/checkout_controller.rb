@@ -1,16 +1,21 @@
 class CheckoutController < ApplicationController
-  include Descuentos
+
 	def make_order
-		@order = params[:order]
-		@descuentos = Descuentos::Order.new(@order)
-		@descuentos.validate
+		 Descuentos::Order.scan(checkout_params[:item])
+	end
+
+	def total_order
+		render json: Descuentos::Order.total
+		
 	end
 
 	private
 	def checkout_params
-		params.require(:order).permit(:items)
+		params.require(:order).permit(:item)
 
-		
 	end
 end
+	
+
+
 	
