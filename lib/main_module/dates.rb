@@ -3,4 +3,5 @@ module Dates
 	PRICES = {"VOUCHER" => 5.00, "TSHIRT" => 20.00 , "MUG" => 7.50}
 	DISCOUNT = {"TSHIRT" => 19.00}
 	CFO_MIN_DISCOUNT = 3
+	MARKETING_ITEM = "VOUCHER"
 end

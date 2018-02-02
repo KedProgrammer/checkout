@@ -1,7 +1,7 @@
 class CheckoutController < ApplicationController
 
 	def make_order
-		 Descuentos::Order.scan(checkout_params[:item])
+		 render json: Descuentos::Order.scan(checkout_params[:item])
 	end
 
 	def total_order
