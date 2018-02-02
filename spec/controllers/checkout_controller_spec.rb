@@ -35,7 +35,7 @@ RSpec.describe CheckoutController, type: :request do
 	 it "validate order 1 " do
 	 	get "/api/v1/remove",:headers => headers
 	 	@expected =  {:message => "Valid code, added to order"}.to_json
-	 	@total = "81.0"
+	 	@total = {:message => "Your total price is 81.0"}.to_json
     	headers = { "CONTENT_TYPE" => "application/json" }
      	post "/api/v1/add", :params => '{ "order": { "item":"TSHIRT" } }',:headers => headers
      	post "/api/v1/add", :params => '{ "order": { "item":"TSHIRT" } }',:headers => headers
@@ -51,7 +51,7 @@ RSpec.describe CheckoutController, type: :request do
  RSpec.describe CheckoutController, type: :request do
 	 it "remove order and get 0" do
 	 	@expected =  {:message => "Order removed"}.to_json
-	 	@total = "0"
+	 	@total = {:message => "Your total price is 0"}.to_json
     	headers = { "CONTENT_TYPE" => "application/json" }
     	get "/api/v1/remove",:headers => headers
     	response.body.should == @expected
@@ -64,7 +64,7 @@ RSpec.describe CheckoutController, type: :request do
   RSpec.describe CheckoutController, type: :request do
 	 it "validate order 2" do
 	 	@expected =  {:message => "Valid code, added to order"}.to_json
-	 	@total = "74.5"
+	 	@total = {:message => "Your total price is 74.5"}.to_json
     	headers = { "CONTENT_TYPE" => "application/json" }
      	post "/api/v1/add", :params => '{ "order": { "item":"TSHIRT" } }',:headers => headers
      	post "/api/v1/add", :params => '{ "order": { "item":"TSHIRT" } }',:headers => headers
