@@ -1,20 +1,24 @@
 module Descuentos
 	class Order
 		include Dates
-		def initialize(order)
-			@validator = Main::Main.new(order)
+		@items = []
+		@main = Main::Main.new(@items)
+
+		def self.scan(item)
+			
+			@items << item
+			@main.order = @items
+		
 			
 		end
 
-
-
-		def validate
-			@validator.say_hello
-			@validator2 = Main::CsoValidator.new
-			Dates::VALIDATIONS.each do |validation|
-				validation.validation
+		def self.total
+			VALIDATIONS.each do |validation|
+			validation.validate
 			end
+			@main.total_order
 		end
+
 	end
 end
 
