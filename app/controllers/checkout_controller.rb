@@ -9,6 +9,11 @@ class CheckoutController < ApplicationController
 		
 	end
 
+	def remove
+		render json: Descuentos::Order.remove
+		
+	end
+
 	private
 	def checkout_params
 		params.require(:order).permit(:item)

@@ -10,7 +10,8 @@ module Descuentos
 				return {:message => "Invalid code, can't add to order"}
 			else
 				@items << item
-				@main.order = @items
+				@main.add(@items) 
+				
 				return {:message => "Valid code, added to order"}
 			end
 			
@@ -21,8 +22,17 @@ module Descuentos
 			VALIDATIONS.each do |validation|
 			validation.validate
 			end
+
 			#return total order 
 			@main.total_order
+		end
+		def self.remove
+			@main.remove
+			@items = []
+			Dates::PRICES[Dates::DISCOUNT.keys[0]] = 20
+			{:message => "Order removed"}
+			
+
 		end
 
 	end
